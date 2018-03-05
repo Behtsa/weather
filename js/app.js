@@ -31,7 +31,7 @@ const getWeatherDetails = (weather) => {
 
 const getLatLng = (lat, lng) => {
   $.ajax({
-   url : 'https://api.darksky.net/forecast/5a577871909255973d40829c2fc8d31f/' + lat + ',' + lng 
+   url : 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5a577871909255973d40829c2fc8d31f/' + lat + ',' + lng 
  }).done(getWeatherDetails)
  .fail(handleError);
 }
@@ -55,7 +55,8 @@ $send.click(function(e){
   let $address = $('#address').val();
   // Consuming Google Geocoding API to get lat and lng
   let finalUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + $address + '&key=' + $key;
-  console.log(finalUrl);
+  // console.log(finalUrl);
+  // const proxy = 'https://cors-anywhere.herokuapp.com/';
   $.ajax({
     url : finalUrl,
   }).done(getLocation)
