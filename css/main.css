@@ -18,3 +18,8 @@ p, h1 {
 .mt-30 {
 	margin-top: 30px;
 }
+
+.btn-position {
+	position: absolute;
+	bottom: 0;
+}
